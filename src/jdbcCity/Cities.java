@@ -73,14 +73,14 @@ public class Cities extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityActionPerformed
-        Connection con;
+        Connection connect;
         try {
             try {  
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
             }
-            con = DriverManager.getConnection("jdbc:sqlserver://.;user=mehtab;password=12345678;database=Cities");
+            connect = DriverManager.getConnection("jdbc:sqlserver://.;user=mehtab;password=12345678;database=Cities");
             System.out.println("Connected to database !");
         } catch (SQLException e) {
             e.printStackTrace();
