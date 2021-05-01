@@ -4,9 +4,9 @@
 //CREATE DATABASE [Cities]
 // CONTAINMENT = NONE
 // ON  PRIMARY 
-//( NAME = N'Cities', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\Cities.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+//( NAME = N'Cities', FILENAME = N'C:\Program Files\Microsoft SQL Server\.\MSSQL\DATA\Cities.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
 // LOG ON 
-//( NAME = N'Cities_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\Cities_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+//( NAME = N'Cities_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\.\MSSQL\DATA\Cities_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 //GO
 //ALTER DATABASE [Cities] SET COMPATIBILITY_LEVEL = 140
 //GO
