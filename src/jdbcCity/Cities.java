@@ -5,6 +5,11 @@
  */
 package jdbcCity;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,6 +73,19 @@ public class Cities extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityActionPerformed
+        Connection con;
+        try {
+            try {  
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(DbConnection.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            con = DriverManager.getConnection("jdbc:sqlserver://.;user=mehtab;password=12345678;database=Cities");
+            System.out.println("Connected to database !");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
         String myCities=City.getSelectedItem().toString();
         int CityIndex=City.getSelectedIndex();
         JOptionPane.showMessageDialog(this, myCities+"  Index= "+ CityIndex);
