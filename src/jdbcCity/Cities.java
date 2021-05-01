@@ -7,7 +7,9 @@ package jdbcCity;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -85,8 +87,17 @@ public class Cities extends javax.swing.JFrame {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        String myCities=City.getSelectedItem().toString();
+        String query = "select city_name from citites;";
+        try {
+            Statement st = connect.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+                City.addItem(rs.getString("city_name"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Cities.class.getName()).log(Level.SEVERE, null, ex);
+     
+            String myCities=City.getSelectedItem().toString();
         int CityIndex=City.getSelectedIndex();
         JOptionPane.showMessageDialog(this, myCities+"  Index= "+ CityIndex);
     }//GEN-LAST:event_CityActionPerformed
